@@ -1,0 +1,21 @@
+<div class="container p-2">
+  <div class="row">
+    <div class="col-12 p-5">
+      <form [formGroup]="searchForm" (submit)="getUserInput()">
+         <input formControlName="username" class="form-control w-25 d-inline mx-2" type="text" placeholder="Enter your username"/>
+         <input formControlName="repository" class="form-control w-25 d-inline mx-2" type="text" placeholder="Enter your repository"/>
+         <button  class="btn btn-primary d-inline mx-2" type="submit">
+           <span [hidden]="isLoading" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+           search
+         </button>
+      </form>
+    </div>
+     <div class="col-3 mx-1">
+        <app-users [username]='username'></app-users>
+     </div>
+     <div class="col mx-1">
+        <app-repositories [username]='username' [repository]='repository'></app-repositories>
+     </div>
+  </div>
+ </div>
+ <router-outlet></router-outlet>

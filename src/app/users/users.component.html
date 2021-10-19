@@ -1,0 +1,11 @@
+<div>
+  <div class="card mt-5" style="width: 18rem;" *ngIf="userProfile?.hasOwnProperty('name')">
+    <img src="{{userProfile.avatar_url}}" class="card-img-top rounded-circle" alt="avatar">
+    <div class="card-body">
+      <h5 class="card-title">{{userProfile.name}}</h5>
+      <p class="card-text">{{userProfile.bio}}</p>
+      <a href="{{userProfile.html_url}}" target="_blank" class="btn btn-primary">Go to GitHub Repo</a>
+    </div>
+  </div>
+
+</div>

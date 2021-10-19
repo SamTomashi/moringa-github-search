@@ -1,0 +1,25 @@
+<div *ngIf="repositories?.hasOwnProperty('name')">
+    <div class="card mt-5">
+      <div class="card-header">
+        {{repositories?.owner?.login}}
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">{{repositories?.name}}</h5>
+        <p class="card-text">{{repositories?.description}}</p>
+        <a href="{{repositories?.html_url}}" target="_blank" class="btn btn-primary">Go to repo</a>
+      </div>
+    </div>
+</div>
+
+<div *ngIf="publicRepos && publicRepos.length > 0">
+  <div class="card mt-5" *ngFor="let repo of publicRepos">
+    <div class="card-header">
+      {{repo?.owner?.login}}
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">{{repo?.name}}</h5>
+      <p class="card-text">{{repo?.description}}</p>
+      <a href="{{repo?.html_url}}" target="_blank" class="btn btn-primary">Go to repo</a>
+    </div>
+  </div>
+</div>
